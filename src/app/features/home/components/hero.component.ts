@@ -32,12 +32,12 @@ import { Component, signal, OnInit, OnDestroy } from '@angular/core';
 
             <!-- Subtitle -->
             <h2 class="hero-subtitle font-head">
-              Software Engineer <span class="sep">|</span> <span class="highlight">.NET &amp; AI</span>
+              Software Engineer <span class="sep">|</span> <span class="highlight">.NET &amp; Angular</span>
             </h2>
 
             <!-- Exact Bio Paragraph -->
             <p class="hero-bio font-body">
-              I'm a Software Engineer specializing in .NET and AI, focused on designing and developing reliable, scalable software solutions. With a strong interest in Artificial Intelligence, Machine Learning, and emerging technologies, I enjoy exploring new ideas and solving technical challenges. Open to new opportunities where I can contribute my skills and grow professionally.
+              I'm a Software Engineer specializing in .NET and Angular, focused on designing and developing reliable, scalable software solutions. With a strong interest in Artificial Intelligence, Machine Learning, and emerging technologies, I enjoy exploring new ideas and solving technical challenges. Open to new opportunities where I can contribute my skills and grow professionally.
             </p>
 
             <!-- CTA Buttons -->
@@ -128,7 +128,7 @@ import { Component, signal, OnInit, OnDestroy } from '@angular/core';
                     <span class="property">role</span>: <span class="string">"Software Engineer"</span>,
                   </div>
                   <div class="code-line indent-1">
-                    <span class="property">primaryStack</span>: [<span class="string">".NET 8"</span>, <span class="string">"AI Systems"</span>, <span class="string">"C#"</span>],
+                    <span class="property">primaryStack</span>: [<span class="string">".NET 8"</span>, <span class="string">"Angular 19"</span>, <span class="string">"C#"</span>],
                   </div>
                   <div class="code-line indent-1">
                     <span class="property">parcours</span>: &#123;
@@ -179,7 +179,7 @@ import { Component, signal, OnInit, OnDestroy } from '@angular/core';
                 <div class="terminal-text">
                   <span class="prompt-arrow">&gt;</span>
                   <span class="out-success">✓ Profile verified:</span>
-                  <span class="out-msg">Full-stack .NET engineer ready for deployment.</span>
+                  <span class="out-msg">Full-stack .NET &amp; Angular engineer ready for deployment.</span>
                 </div>
               </div>
 
@@ -210,7 +210,7 @@ import { Component, signal, OnInit, OnDestroy } from '@angular/core';
             </div>
             <div class="fact-text">
               <span class="fact-label">Main stack</span>
-              <strong class="fact-val">.NET 8 + AI</strong>
+              <strong class="fact-val">.NET 8 + Angular</strong>
             </div>
           </div>
 
