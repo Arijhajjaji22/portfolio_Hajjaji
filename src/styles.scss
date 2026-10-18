@@ -1,0 +1,253 @@
+/* ==========================================================================
+   DARK AURORA GLASS — Design System
+   Portfolio: Arij Hajjaji — Software Engineer
+   Style: Premium dark with glass panels, gradient accents, aurora bg
+   ========================================================================== */
+
+/* ── Design Tokens ───────────────────────────────────────────────────────── */
+:root,
+[data-theme='dark'] {
+  --bg:          #070910;
+  --bg2:         #0c0f1a;
+  --panel:       rgba(255, 255, 255, 0.04);
+  --panel-hover: rgba(255, 255, 255, 0.07);
+  --border:      rgba(255, 255, 255, 0.09);
+  --border-strong: rgba(255, 255, 255, 0.18);
+  --text:        #eae8f0;
+  --muted:       #7d8699;
+  --muted2:      #545c70;
+
+  /* Gradient accents */
+  --blue:        #5b7cff;
+  --violet:      #9b6bff;
+  --cyan:        #22d3ee;
+  --mint:        #34e8b0;
+
+  /* Gradient strings */
+  --grad-bv:     linear-gradient(135deg, #5b7cff, #9b6bff);
+  --grad-cv:     linear-gradient(135deg, #22d3ee, #9b6bff);
+  --grad-bm:     linear-gradient(135deg, #5b7cff, #34e8b0);
+
+  /* Glow */
+  --glow-blue:   rgba(91, 124, 255, 0.25);
+  --glow-violet: rgba(155, 107, 255, 0.20);
+  --glow-cyan:   rgba(34, 211, 238, 0.20);
+  --glow-mint:   rgba(52, 232, 176, 0.15);
+
+  /* Glass surface */
+  --glass-bg:     rgba(255, 255, 255, 0.04);
+  --glass-border: 1px solid rgba(255, 255, 255, 0.09);
+  --glass-radius: 20px;
+
+  /* Typography */
+  --font-head: 'Sora', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Layout */
+  --max-w: 1120px;
+  --nav-h: 70px;
+}
+
+[data-theme='light'] {
+  --bg:          #f6f7fb;
+  --bg2:         #eeeff5;
+  --panel:       rgba(0, 0, 0, 0.03);
+  --panel-hover: rgba(0, 0, 0, 0.05);
+  --border:      rgba(0, 0, 0, 0.08);
+  --border-strong: rgba(0, 0, 0, 0.15);
+  --text:        #141622;
+  --muted:       #5d6480;
+  --muted2:      #9099b0;
+
+  --blue:        #3d5ef0;
+  --violet:      #7a4de0;
+  --cyan:        #0891b2;
+  --mint:        #059669;
+
+  --grad-bv:     linear-gradient(135deg, #3d5ef0, #7a4de0);
+  --grad-cv:     linear-gradient(135deg, #0891b2, #7a4de0);
+  --grad-bm:     linear-gradient(135deg, #3d5ef0, #059669);
+
+  --glow-blue:   rgba(61, 94, 240, 0.18);
+  --glow-violet: rgba(122, 77, 224, 0.15);
+  --glow-cyan:   rgba(8, 145, 178, 0.15);
+  --glow-mint:   rgba(5, 150, 105, 0.12);
+
+  --glass-bg:     rgba(0, 0, 0, 0.03);
+  --glass-border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* ── Reset ───────────────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ── Typography helpers ──────────────────────────────────────────────────── */
+.font-head { font-family: var(--font-head); }
+.font-body { font-family: var(--font-body); }
+.font-mono { font-family: var(--font-mono); }
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-head);
+  line-height: 1.1;
+  color: var(--text);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+  color: inherit;
+}
+
+/* ── Gradient text utility ───────────────────────────────────────────────── */
+.grad-text {
+  background: var(--grad-bv);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.grad-text-cv {
+  background: var(--grad-cv);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Glass card utility ──────────────────────────────────────────────────── */
+.glass {
+  background: var(--glass-bg);
+  border: var(--glass-border);
+  border-radius: var(--glass-radius);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* ── Container ───────────────────────────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: var(--max-w);
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 5vw, 2.5rem);
+}
+
+/* ── Section label ───────────────────────────────────────────────────────── */
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 1rem;
+
+  &::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 1px;
+    background: var(--blue);
+  }
+}
+
+/* ── Tag pill ────────────────────────────────────────────────────────────── */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.7rem;
+  border-radius: 50px;
+  background: var(--panel);
+  border: var(--glass-border);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--muted);
+  white-space: nowrap;
+  transition: color 0.2s, border-color 0.2s;
+
+  &:hover {
+    color: var(--text);
+    border-color: var(--border-strong);
+  }
+}
+
+/* ── Scroll fade in animation ────────────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+
+  &.visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ── Focus visible ───────────────────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ── Scrollbar ───────────────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 3px;
+}
+
+/* ── View transition ─────────────────────────────────────────────────────── */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 450ms;
+}
